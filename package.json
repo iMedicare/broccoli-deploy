@@ -1,0 +1,22 @@
+{
+  "name": "broccoli-deploy",
+  "version": "0.0.1",
+  "description": "Broccoli plugin for hosting assets to S3",
+  "keywords": [
+    "broccoli",
+    "deploy",
+    "s3"
+  ],
+  "author": "Stefan Gugurel <stefangugurel@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "broccoli": "bin/broccoli"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.0.21",
+    "broccoli": "^0.13.2",
+    "chalk": "^0.5.1",
+    "commander": "^2.4.0",
+    "glob": "^4.0.6"
+  }
+}

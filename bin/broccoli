@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var program  = require('commander')
+var broccoli = require('broccoli')
+var deploy   = require('../lib/tasks/deploy')
+
+program
+  .command('deploy <bucket>')
+  .description('deploy assets to S3')
+  .action(function(bucket) {
+    var tree = broccoli.loadBrocfile()
+    var builder = new broccoli.Builder(tree)
+    builder
+      .build()
+      .then(function(hash) {
+        deploy.run(hash.directory, bucket)
+      })
+  })
+
+program.parse(process.argv)
