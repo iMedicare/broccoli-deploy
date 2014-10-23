@@ -10,13 +10,13 @@
   "author": "Stefan Gugurel <stefangugurel@gmail.com>",
   "license": "MIT",
   "bin": {
-    "broc": "bin/broc"
     "broccoli-deploy": "bin/broccoli-deploy"
   },
   "dependencies": {
     "aws-sdk": "^2.0.21",
     "chalk": "^0.5.1",
     "commander": "^2.4.0",
+    "dotenv": "^0.4.0",
     "glob": "^4.0.6",
     "resolve": "^1.0.0"
   }
