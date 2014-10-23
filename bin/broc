@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
-var program  = require('commander')
-var broccoli = require('broccoli')
-var deploy   = require('../lib/tasks/deploy')
+var program = require('commander')
+var resolve = require('resolve')
+var deploy  = require('../lib/tasks/deploy')
+
+var broccoliPath = resolve.sync('broccoli', {
+  basedir: process.cwd()
+})
+var broccoli = require(broccoliPath)
 
 program
   .command('deploy <bucket>')
