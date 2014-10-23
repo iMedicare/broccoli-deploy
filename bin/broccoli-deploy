@@ -10,16 +10,18 @@ var broccoliPath = resolve.sync('broccoli', {
 var broccoli = require(broccoliPath)
 
 program
-  .command('deploy <bucket>')
   .description('deploy assets to S3')
-  .action(function(bucket) {
-    var tree = broccoli.loadBrocfile()
-    var builder = new broccoli.Builder(tree)
-    builder
-      .build()
-      .then(function(hash) {
-        deploy.run(hash.directory, bucket)
-      })
-  })
+  .option('-b, --bucket [name]', 'bucket name')
+  .parse(process.argv)
 
-program.parse(process.argv)
+var run = function () {
+  var tree = broccoli.loadBrocfile()
+  var builder = new broccoli.Builder(tree)
+  builder
+    .build()
+    .then(function(hash) {
+      deploy.run(hash.directory, program.bucket)
+    })
+}
+
+run()

@@ -20,7 +20,7 @@ AWS_SECRET_ACCESS_KEY=YourSecret
 Then, run:
 
 ```shell
-broc deploy <bucket>
+broccoli-deploy --bucket YourBucket
 ```
 ## License
 

@@ -11,6 +11,7 @@
   "license": "MIT",
   "bin": {
     "broc": "bin/broc"
+    "broccoli-deploy": "bin/broccoli-deploy"
   },
   "dependencies": {
     "aws-sdk": "^2.0.21",
