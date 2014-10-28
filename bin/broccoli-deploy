@@ -12,6 +12,7 @@ var broccoli = require(broccoliPath)
 program
   .description('deploy assets to S3')
   .option('-b, --bucket [name]', 'bucket name')
+  .option('-d, --directory [name]', 'directory name')
   .parse(process.argv)
 
 var run = function () {
@@ -20,7 +21,7 @@ var run = function () {
   builder
     .build()
     .then(function(hash) {
-      deploy.run(hash.directory, program.bucket)
+      deploy.run(hash.directory, program.bucket, program.directory)
     })
 }
 
