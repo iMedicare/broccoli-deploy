@@ -12,6 +12,10 @@
   "bin": {
     "broccoli-deploy": "bin/broccoli-deploy"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/iMedicare/broccoli-deploy.git"
+  },
   "dependencies": {
     "aws-sdk": "^2.0.21",
     "chalk": "^0.5.1",
