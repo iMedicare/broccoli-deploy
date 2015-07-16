@@ -1,28 +1,28 @@
 #!/usr/bin/env node
 
-var program = require('commander')
-var resolve = require('resolve')
-var deploy  = require('../lib/tasks/deploy')
+var program = require('commander');
+var resolve = require('resolve');
+var deploy  = require('../lib/tasks/deploy');
 
 var broccoliPath = resolve.sync('broccoli', {
   basedir: process.cwd()
-})
-var broccoli = require(broccoliPath)
+});
+var broccoli = require(broccoliPath);
 
 program
   .description('deploy assets to S3')
   .option('-b, --bucket [name]', 'bucket name')
   .option('-d, --directory [name]', 'directory name')
-  .parse(process.argv)
+  .parse(process.argv);
 
 var run = function () {
-  var tree = broccoli.loadBrocfile()
-  var builder = new broccoli.Builder(tree)
+  var tree = broccoli.loadBrocfile();
+  var builder = new broccoli.Builder(tree);
   builder
     .build()
     .then(function(hash) {
-      deploy.run(hash.directory, program.bucket, program.directory)
-    })
+      deploy.run(hash.directory, program.bucket, program.directory);
+    });
 }
 
-run()
+run();
