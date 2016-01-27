@@ -1,6 +1,6 @@
 {
   "name": "broccoli-deploy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Broccoli plugin for hosting assets to S3",
   "keywords": [
     "broccoli",
